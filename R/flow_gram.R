@@ -1,13 +1,6 @@
 
 flowgram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
-  #
-  #   MS = 2
-  #   ebikes = 0
-  #   equity = 0
 
-
-  # temporary initialization of baseline
-  # baseline <- bl
   #resets all senarios parameters: trip cycled(now_cycle) | person=cyclist | prob cycling a trip (Pcyc)
   baseline$now_cycle <- 0
   baseline$cyclist <- 0
@@ -131,14 +124,6 @@ flowgram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
       round(60 * baseline[baseline$Cycled != 1 & baseline$cyclist == 1 & (baseline$Pcyc > baseline$justrandom) ,]$newtime, 0)
 
   }
-  #   cycled != 1 and cyclist == 1 and p > justrandom
-  #   then now_cycle = 1
-  #   and if ebikes == 0{
-  #     baseline[k,'METh']= METcycling * newtime
-  #     baseline[k,'MMETh']= (METcycling-1)* newtime
-  #     baseline[k,'TripTotalTime1']=round(60*newtime,0)
-  #
-  #   }
 
   baseline[baseline$Cycled != 1 & baseline$cyclist == 1 & (baseline$Pcyc > baseline$justrandom),]$choice <-
     apply(subset(baseline, Cycled != 1 & cyclist == 1 & (Pcyc > justrandom),
@@ -190,5 +175,4 @@ flowgram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
 
   # Return blsave
   blsave
-
 }
