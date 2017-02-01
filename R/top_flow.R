@@ -2,14 +2,9 @@
 rm(list=ls())
 timeStart<-Sys.time()
 
-source('1_flowgram2-2012.R')  #scenarios generator
-source('pcyc21.R')            # cycling probabilities
-source('tripspeed.R')         # speed by age/gender
-source('oddsp.R')             # calculates odds > prob
-source('podds.R')             # calculates prob > odds
-source('bikechoice.R')        #calculates prob of using pushbike/ebike 
-source('directProbs.R')       # used in 1_flowgram2-2012.R
-
+source('R/flow_gram.R')  #scenarios generator
+source('R/functions.R')            # cycling probabilities
+source('R/direct_probability.R')         # speed by age/gender
 
 library(plyr)
 library(dplyr)  
