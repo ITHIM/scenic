@@ -10,8 +10,9 @@ Description: An implementation of scenario generation based on travel survey
     examples.
 License: What license is it under?
 LazyData: TRUE
-Imports:
+Depends:
     dplyr,
+    plyr,
     sqldf,
     stringr,
     data.table
