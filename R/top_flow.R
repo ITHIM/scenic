@@ -1,20 +1,6 @@
-
-rm(list=ls())
-timeStart<-Sys.time()
-
-source('R/flow_gram.R')  #scenarios generator
-source('R/functions.R')            # cycling probabilities
-source('R/direct_probability.R')         # speed by age/gender
-
-library(plyr)
-library(dplyr)  
-library(stringr)
-library(data.table)
-library(sqldf)
-
-#read reference odds (varies by age/sex/dist)
-pcycl_baseline <- read.csv('pcycl_baseline2.csv')  #cycling probs file
-pcycl_baseline <- pcycl_baseline[,-1]              #quita columna 1
+# 'inst/extdata/pcycl_baseline2.csv')
+pcycl_baseline <- read.csv(system.file("extdata", "pcycl_baseline2", package = "scenic"))  #cycling probs file
+pcycl_baseline <- pcycl_baseline[,-1] 
 
 #reads scenarios constants
 METcycling <- 6.44
@@ -22,10 +8,10 @@ METwalking <- 4.61
 METebikes <- 4.50
 
 #Read cycling speeds by age/sex
-cyclingspeed <- read.csv('cyclingSpeeds.csv',header=T)
+cyclingspeed <- read.csv('inst/extdata/cyclingSpeeds.csv',header=T)
 
 # Read Cycling Probabilities into an R Object
-probCycling <- read.csv("cycling-probability.csv", header = T, as.is = T)
+probCycling <- read.csv("inst/extdata/cycling-probability.csv", header = T, as.is = T)
 
 # Convert all probabilities into odss
 oddsCycling <- round(probCycling /( 1 - probCycling), 3)
@@ -38,7 +24,7 @@ Pcyc0.eq0 <- oddsCycling[1:4]
 Pcyc0.eq1 <- rep(oddsCycling[5], 4)
 
 # Baseline=NTS years 2011-2014 + individuals between 18-84 y.o + not Wales/Scotland 
-bl <- readRDS('bl2014_v2.rds')
+bl <- readRDS('inst/extdata/bl2014_v2.rds')
 bl = subset(bl, subset = Age_B01ID < 21 & HHoldGOR_B02ID!=10  & HHoldGOR_B02ID!=11)
 bl$Age[bl$Age_B01ID<16] <- '16.59'
 bl$Age[bl$Age_B01ID>=16] <- '60plus'
@@ -66,7 +52,7 @@ baseline <- rbind(baseline,shortwalks)
 baseline <- baseline[order(baseline$ID),]
 
 #add people w/o trips to baseline
-fnotrips  <- readRDS('people_notrips2014_v2.Rds')
+fnotrips  <- readRDS('inst/extdata/people_notrips2014_v2.Rds')
 #fnotrips  <- read.csv('People_w_NoTrips2012_ENG_v6_anon.csv',header=T,as.is=T)
 
 # Remove 85+ age group + Wales/Scotland
@@ -106,7 +92,7 @@ rm(shortwalks, df)
 #Sample before running scenarios -
 
 # Removed NAs from the data.frame
-hsematch <- readRDS('hse-nts_match_v2.Rds')
+hsematch <- readRDS('inst/extdata/hse-nts_match_v2.Rds')
 #names(hsematch)[c(1,7,8)] <- c('ID', 'health_mmets', 'physical_activity_mmets')
 #hsematch = hsematch[, c(1,7,8)]
 
@@ -120,7 +106,7 @@ fnotrips$physical_activity_mmets <- NULL
 baseline <- rbind.fill(baseline, fnotrips)
 
 # Read nts age group lookup table
-ag_lookup <- read.csv("nts-adjusted-age-groups.csv", header = T, as.is = T)
+ag_lookup <- read.csv("inst/extdata/nts-adjusted-age-groups.csv", header = T, as.is = T)
 
 # Create a new variable 'age_group' for baseline, which converts numeric age categories into age ranges
 baseline$age_group <- ag_lookup$age[match(baseline$Age_B01ID, ag_lookup$nts_group)]
@@ -219,7 +205,7 @@ for (ebikes in m) {
       scenario_name <- paste("MS",MS,"_ebik",ebikes,"_eq" ,equity,sep="")
       #assign(scenario_name,flowgram(baseline, MS,ebikes,equity, pcycl_baseline))
       tempSc <- flowgram(baseline, MS,ebikes,equity, pcycl_baseline)
-      saveRDS(tempSc, paste0('./temp_data_folder/output/repo_version/', scenario_name, '.rds'))
+      #saveRDS(tempSc, paste0('./temp_data_folder/output/repo_version/', scenario_name, '.rds'))
 
       listOfScenarios[[num]] <- scenario_name
       num <- num + 1
