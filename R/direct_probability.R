@@ -1,5 +1,14 @@
-#' Return IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
-
+#' Potential Cyclists (Relative Risk Approach)
+#'
+#' Returns IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
+#'
+#' @param baselineSubset ???
+#' @param DP ???
+#' @param ebikes ???
+#' @param equity ???
+#' @param pcycl_baseline ???
+#' @param region ???
+#' @export
 directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
   
   # if DP == 1 -> don't process just return all IDs assuming that there is no population in which cyclists are 100%
@@ -179,7 +188,18 @@ directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baselin
   }
 }
 
-#' Return IDs of all ppl (including also these who were cyclist already) who became potential cyclist using proportions of cyclists group
+#' Potential Cyclists (Proportions Approach)
+#'
+#' Returns IDs of all ppl (including also these who were cyclist
+#' already) who became potential cyclist using proportions approach
+#'
+#' @param baselineSubset ???
+#' @param DP ???
+#' @param ebikes ???
+#' @param equity ???
+#' @param pcycl_baseline ???
+#' @param region ???
+#' @export
 
 directProbProportionsPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
   

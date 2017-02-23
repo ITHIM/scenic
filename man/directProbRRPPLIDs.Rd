@@ -2,11 +2,24 @@
 % Please edit documentation in R/direct_probability.R
 \name{directProbRRPPLIDs}
 \alias{directProbRRPPLIDs}
-\title{Return IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach}
+\title{Potential Cyclists (Relative Risk Approach)}
 \usage{
 directProbRRPPLIDs(baselineSubset, DP, ebikes, equity, pcycl_baseline, region)
 }
+\arguments{
+\item{baselineSubset}{???}
+
+\item{DP}{???}
+
+\item{ebikes}{???}
+
+\item{equity}{???}
+
+\item{pcycl_baseline}{???}
+
+\item{region}{???}
+}
 \description{
-Return IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
+Returns IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
 }
 
