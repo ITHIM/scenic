@@ -2,3 +2,4 @@
 
 export(directProbProportionsPPLIDs)
 export(directProbRRPPLIDs)
+export(flowgram)

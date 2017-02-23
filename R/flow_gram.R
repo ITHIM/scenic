@@ -1,4 +1,13 @@
-
+#' Flowgram
+#'
+#' Not sure what it does yet.
+#'
+#' @param baseline ???
+#' @param MS ???
+#' @param ebikes ???
+#' @param equity ???
+#' @param pcycl_baseline ???
+#' @export
 flowgram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
 
   #resets all senarios parameters: trip cycled(now_cycle) | person=cyclist | prob cycling a trip (Pcyc)
