@@ -1,7 +1,7 @@
 Package: scenic
 Type: Package
 Title: Generate Scenarios for Cycling Using Travel Survey Data
-Version: 0.1
+Version: 0.1.1
 Author: person ("Ali", "Abbas", email = "aa797@cam.ac.uk",
     role = c("aut", "cre"))
 Description: An implementation of scenario generation based on travel survey
@@ -11,9 +11,4 @@ Description: An implementation of scenario generation based on travel survey
 License: What license is it under?
 LazyData: TRUE
 Depends:
-    dplyr,
-    plyr,
-    sqldf,
-    stringr,
-    data.table
 RoxygenNote: 5.0.1
