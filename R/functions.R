@@ -14,7 +14,11 @@
 #' @export
 
 trip_speed <- function(age, sex, bike_type)  {
+  
+  speed = 0
+  # If bike_type is pedal bike
   if (bike_type == 0) {
+    # For women
     if (sex == 'Female') {
       if (age == '16.59')
         speed = 10.12
@@ -22,8 +26,7 @@ trip_speed <- function(age, sex, bike_type)  {
         speed = 8.27
     }
     
-    else
-      #sex=male
+    else #sex=male
     {
       if (age == '16.59')
         speed = 10.87
@@ -31,11 +34,11 @@ trip_speed <- function(age, sex, bike_type)  {
         speed = 9.08
     }
   }
-  
+  # If it is ebike
   if (bike_type == 1)
     speed = 11.58
   
-  tripspeed = speed
+  speed
 }
 
 
