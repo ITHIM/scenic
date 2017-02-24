@@ -1,16 +1,15 @@
-#' Flowgram
+#' Flow_gram
 #'
-#' Not sure what it does yet.
 #' 
 #' 
 #'
 #' @param baseline Baseline Travel Survey Dataframe
-#' @param MS Direct probability of potential cyclists
+#' @param DP Direct probability of potential cyclists
 #' @param ebikes Boolean variable for ebikes
 #' @param equity Boolean variable for equity (between men and women)
 #' @param pcycl_baseline Cycling probability broken down by age and gender groups
 #' @export
-flow_gram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
+flow_gram <-function(baseline, DP,ebikes,equity, pcycl_baseline) {
 
   #resets all senarios parameters: trip cycled(now_cycle) | person=cyclist | prob cycling a trip (Pcyc)
   baseline$now_cycle <- 0
@@ -30,9 +29,9 @@ flow_gram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
   #EQUITY scenario
 
   if (equity == 0) {
-    Pcyc0 <- (MS - 1) * Pcyc0.eq0
+    Pcyc0 <- (DP - 1) * Pcyc0.eq0
   }else {
-    Pcyc0 <- (MS - 1) * Pcyc0.eq1
+    Pcyc0 <- (DP - 1) * Pcyc0.eq1
   }
 
   #calc new probs
@@ -60,7 +59,7 @@ flow_gram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
 
     baselineSubset <- subset(baseline, HHoldGOR_B02ID == region)
 
-    IDOfPplCyclist <- directProbRRPPLIDs(baselineSubset, MS, ebikes, equity, pcycl_baseline, region)
+    IDOfPplCyclist <- directProbRRPPLIDs(baselineSubset, DP, ebikes, equity, pcycl_baseline, region)
 
     baselineSubset[baselineSubset$ID %in% IDOfPplCyclist,]$cyclist <- 1
 
@@ -80,7 +79,7 @@ flow_gram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
 
   baselineCoutry$HHoldGOR_B02ID <- 0
 
-  IDOfPplCyclist <- directProbRRPPLIDs(baselineCoutry, MS, ebikes, equity, pcycl_baseline, 0)
+  IDOfPplCyclist <- directProbRRPPLIDs(baselineCoutry, DP, ebikes, equity, pcycl_baseline, 0)
 
   baselineCoutry[baselineCoutry$ID %in% IDOfPplCyclist,]$cyclist <- 1
 
@@ -115,7 +114,7 @@ flow_gram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
   #calculate prob of a given trip being cycled
   baseline[baseline$Cycled != 1 & baseline$cyclist != 0 ,]$Pcyc <-
     apply(subset(baseline, Cycled != 1 & cyclist != 0, select = c(Age,Sex,TripDisIncSW)), 1,
-          function(x) pcyc21(x[1],x[2], x[3], ebikes, equity, MS))
+          function(x) pcyc21(x[1],x[2], x[3], ebikes, equity, DP))
 
   ## add random column to the baseline data.frame
   baseline$justrandom <- justrandom
@@ -174,8 +173,8 @@ flow_gram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
   baseline[baseline$Cycled != 1 & baseline$cyclist == 1 & (baseline$Pcyc <= baseline$justrandom),]$TripTotalTime1 <-
     baseline[baseline$Cycled != 1 & baseline$cyclist == 1 & (baseline$Pcyc <= baseline$justrandom),]$TripTotalTime1
 
-  # nombre <- paste("MS",MS,"_ebik",ebikes,"_eq" ,equity,".csv",sep="")
-  nombre <- paste("MS",MS,"_ebik",ebikes,"_eq" ,equity,sep="")
+  # nombre <- paste("DP",DP,"_ebik",ebikes,"_eq" ,equity,".csv",sep="")
+  nombre <- paste("DP",DP,"_ebik",ebikes,"_eq" ,equity,sep="")
 
   # Fixed a bug: replaced colnames with c
   # Removed TripTravelTime1
