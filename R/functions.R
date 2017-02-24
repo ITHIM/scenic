@@ -1,9 +1,9 @@
 #' Trip Speed
 #'
-#' Calculates speed of a cycling trip, based on following parameters:
-#' 1. age: With two categories 16-59 and 60+ year olds
-#' 2. gender: Male or Female
-#' 3. bike_type: A boolean variable whether it's a pedal bike (0) or an ebike (1)
+#' Calculates speed of a cycling trip, based on following parameters:\cr
+#' 1. age: With two categories 16-59 and 60+ year olds\cr
+#' 2. gender: Male or Female\cr
+#' 3. bike_type: A boolean variable whether it's a pedal bike (0) or an ebike (1)\cr
 #' 
 #'
 #' @param baseline Baseline Travel Survey Dataframe

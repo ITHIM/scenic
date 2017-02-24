@@ -18,10 +18,10 @@ flow_gram(baseline, DP, ebikes, equity, pcycl_baseline)
 \item{pcycl_baseline}{Cycling probability broken down by age and gender groups}
 }
 \description{
-Creates a scenario based on three paramets: 
-1. Direct Probability (Percentage of potential cyclists in the overall population). Its value is in percentages (between 0 and 1)
-2. Ebikes: A boolean variable indicating whether ebikes are being used or not. This allows longer journeys to be converted into ebike journeys.
-3. Equity: A boolean variable whether women have the same probablity of converting their trips into cycling trips.
+Creates a scenario based on three paramets:\cr 
+1. Direct Probability (Percentage of potential cyclists in the overall population). Its value is in percentages (between 0 and 1)\cr
+2. Ebikes: A boolean variable indicating whether ebikes are being used or not. This allows longer journeys to be converted into ebike journeys.\cr
+3. Equity: A boolean variable whether women have the same probablity of converting their trips into cycling trips.\cr
 }
 \details{
 At the end, this function returns a data frame (similar to the baseline data frame), with new cycling trips
