@@ -79,6 +79,3 @@ pcyc21 <-function(age,sex,dist,ebikes,equity,MS) {
   pcyc <- prob
   pcyc
 }
-  
- 
-  
