@@ -2,12 +2,13 @@
 #'
 #' Returns IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
 #'
-#' @param baselineSubset ???
-#' @param DP ???
-#' @param ebikes ???
-#' @param equity ???
-#' @param pcycl_baseline ???
-#' @param region ???
+#'
+#' @param baselineSubset A subset of baseline travey survey data as a data frame
+#' @param DP Direct probability of potential cyclists
+#' @param ebikes Boolean variable for ebikes
+#' @param equity Boolean variable for equity (between men and women)
+#' @param pcycl_baseline Cycling probability broken down by age and gender groups
+#' @param region An integer variable to specify one of the nine regions of England 
 #' @export
 directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
   
@@ -193,12 +194,12 @@ directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baselin
 #' Returns IDs of all ppl (including also these who were cyclist
 #' already) who became potential cyclist using proportions approach
 #'
-#' @param baselineSubset ???
-#' @param DP ???
-#' @param ebikes ???
-#' @param equity ???
-#' @param pcycl_baseline ???
-#' @param region ???
+#' @param baselineSubset A subset of baseline travey survey data as a data frame
+#' @param DP Direct probability of potential cyclists
+#' @param ebikes Boolean variable for ebikes
+#' @param equity Boolean variable for equity (between men and women)
+#' @param pcycl_baseline Cycling probability broken down by age and gender groups
+#' @param region An integer variable to specify one of the nine regions of England 
 #' @export
 
 directProbProportionsPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
