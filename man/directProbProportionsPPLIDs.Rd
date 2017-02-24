@@ -2,12 +2,26 @@
 % Please edit documentation in R/direct_probability.R
 \name{directProbProportionsPPLIDs}
 \alias{directProbProportionsPPLIDs}
-\title{Return IDs of all ppl (including also these who were cyclist already) who became potential cyclist using proportions of cyclists group}
+\title{Potential Cyclists (Proportions Approach)}
 \usage{
 directProbProportionsPPLIDs(baselineSubset, DP, ebikes, equity, pcycl_baseline,
   region)
 }
+\arguments{
+\item{baselineSubset}{???}
+
+\item{DP}{???}
+
+\item{ebikes}{???}
+
+\item{equity}{???}
+
+\item{pcycl_baseline}{???}
+
+\item{region}{???}
+}
 \description{
-Return IDs of all ppl (including also these who were cyclist already) who became potential cyclist using proportions of cyclists group
+Returns IDs of all ppl (including also these who were cyclist
+already) who became potential cyclist using proportions approach
 }
 
