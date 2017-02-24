@@ -12,7 +12,7 @@ bike_choice(dist, tripsebike)
 \item{tripsebike}{Probability of converting a trip into an ebike trip based on trip distance}
 }
 \value{
-Trip Speed based on age, sex and bike_type
+Returns a boolean: 1 for ebike and 0 for pedal bike
 }
 \description{
 Probabilitically identifies if a trip is converted to a pedal bike trip or an ebike trip
