@@ -7,17 +7,17 @@
 directProbRRPPLIDs(baselineSubset, DP, ebikes, equity, pcycl_baseline, region)
 }
 \arguments{
-\item{baselineSubset}{???}
+\item{baselineSubset}{A subset of baseline travey survey data as a data frame}
 
-\item{DP}{???}
+\item{DP}{Direct probability of potential cyclists}
 
-\item{ebikes}{???}
+\item{ebikes}{Boolean variable for ebikes}
 
-\item{equity}{???}
+\item{equity}{Boolean variable for equity (between men and women)}
 
-\item{pcycl_baseline}{???}
+\item{pcycl_baseline}{Cycling probability broken down by age and gender groups}
 
-\item{region}{???}
+\item{region}{An integer variable to specify one of the nine regions of England}
 }
 \description{
 Returns IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
