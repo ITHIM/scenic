@@ -43,8 +43,18 @@ trip_speed <- function(age, sex, bike_type)  {
 }
 
 
+#' Bike Choice
+#'
+#' Probabilitically identifies if a trip is converted to a pedal bike trip or an ebike trip
+#' 
+#'
+#' @param dist Trip Distance
+#' @param tripsebike Probability of converting a trip into an ebike trip based on trip distance
+#' @return Trip Speed based on age, sex and bike_type
+#' @export
 
-bikechoice <-function(dist, tripsebike) { 
+
+bike_choice <-function(dist, tripsebike) { 
   #calculates prob of switch to cycling depending on: [age-sex-trip distance]
   
   #intervals for distance binning
@@ -62,10 +72,8 @@ bikechoice <-function(dist, tripsebike) {
   result <- probstrip[nrow]
   x <- runif(1,0,1)
   
-  bikechoice <- ifelse(x<result,1,0)
+  bike_choice <- ifelse( x < result, 1, 0)
 }
-
-
 
 
 oddsp <- function (x){   
