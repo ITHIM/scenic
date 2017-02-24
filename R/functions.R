@@ -51,7 +51,6 @@ trip_speed <- function(age, sex, bike_type)  {
 #' @return Returns a boolean: 1 for ebike and 0 for pedal bike
 #' @export
 
-
 bike_choice <-function(dist, tripsebike) { 
   #calculates prob of switch to cycling depending on: [age-sex-trip distance]
   
@@ -73,14 +72,30 @@ bike_choice <-function(dist, tripsebike) {
   bike_choice <- ifelse( x < result, 1, 0)
 }
 
+#' Odds to Probability
+#'
+#' Converts odds ratio to probability
+#' 
+#' @param x Probability
+#' @return Odds ratio
+#' @export
 
-oddsp <- function (x){   
-  podds <- x/(x+1) 
+odds_to_prob <- function (x){   
+  x / (x + 1) 
 }
 
-podds <- function (x)
-{   podds<- x/(1-x) }
+#' Probability to Odds ratio
+#'
+#' Converts probability to odds ratio
+#' 
+#' @param x Odds ratio
+#' @return Probability
+#' @export
 
+
+prob_to_odds <- function (x){
+  x / (1 - x) 
+}
 
 
 pcyc21 <-function(age,sex,dist,ebikes,equity,MS) {
