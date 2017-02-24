@@ -2,8 +2,9 @@ Package: scenic
 Type: Package
 Title: Generate Scenarios for Cycling Using Travel Survey Data
 Version: 0.1.1
-Author: person ("Ali", "Abbas", email = "aa797@cam.ac.uk",
-    role = c("aut", "cre"))
+Authors@R: c(
+    person("Ali", "Abbas", , "m.ali.abbas@gmail.com", c("aut", "cre"))
+    )
 Description: An implementation of scenario generation based on travel survey
     data. It takes into account variable names and type of scenarios users are
     interested in. See the ICT website for more information, documentation and
