@@ -11,7 +11,8 @@
 #' @param region An integer variable to specify one of the nine regions of England 
 #' @return Return IDs of all individuals satisfying \code{DP}, \code{ebikes} and \code{equity} in a specified \code{region}
 #' @export
-directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
+
+direct_prob_RR <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
   
   # if DP == 1 -> don't process just return all IDs assuming that there is no population in which cyclists are 100%
   
@@ -204,7 +205,7 @@ directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baselin
 #' @return Return IDs of all individuals satisfying \code{DP}, \code{ebikes} and \code{equity} in a specified \code{region}
 #' @export
 
-directProbProportionsPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
+direct_prob_prop <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
   
   # if DP == 1 -> don't process just return all IDs assuming that there is no population in which cyclists are 100%
   
