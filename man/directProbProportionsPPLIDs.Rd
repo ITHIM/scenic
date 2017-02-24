@@ -20,8 +20,11 @@ directProbProportionsPPLIDs(baselineSubset, DP, ebikes, equity, pcycl_baseline,
 
 \item{region}{An integer variable to specify one of the nine regions of England}
 }
+\value{
+Return IDs of all individuals satisfying \code{DP}, \code{ebikes} and \code{equity} in a specified \code{region}
+}
 \description{
-Returns IDs of all ppl (including also these who were cyclist
+Identifies IDs of all ppl (including also these who were cyclist
 already) who became potential cyclist using proportions approach
 }
 

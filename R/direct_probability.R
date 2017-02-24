@@ -1,6 +1,6 @@
 #' Potential Cyclists (Relative Risk Approach)
 #'
-#' Returns IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
+#' Identifies IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
 #'
 #'
 #' @param baselineSubset A subset of baseline travey survey data as a data frame
@@ -9,6 +9,7 @@
 #' @param equity Boolean variable for equity (between men and women)
 #' @param pcycl_baseline Cycling probability broken down by age and gender groups
 #' @param region An integer variable to specify one of the nine regions of England 
+#' @return Return IDs of all individuals satisfying \code{DP}, \code{ebikes} and \code{equity} in a specified \code{region}
 #' @export
 directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
   
@@ -89,7 +90,7 @@ directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baselin
       cyclistsPropBySubgroups[i, c('pplCyclist')] <- length(unique(baselineSubset[baselineSubset$Cycled == 1 & baselineSubset$agesex == cyclistsPropBySubgroups$agesex[i], ]$ID))
       cyclistsPropBySubgroups[i, c('pplNonCyclist')] <- cyclistsPropBySubgroups[i, ]$ppl - cyclistsPropBySubgroups[i, ]$pplCyclist
       cyclistsPropBySubgroups[i, c('prop')] <- round(cyclistsPropBySubgroups[i, ]$pplCyclist/cyclistsPropBySubgroups[i, ]$ppl, digits = 10)
-
+      
     }
     
     # work out ratio, referencing (ratio=1) group is this with the largest number of ppl
@@ -122,17 +123,17 @@ directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baselin
       cyclistsPropBySubgroups[i, c('pplAfterCyclistsSub')] <- cyclistsPropBySubgroups[i, ]$pplNonCyclist - cyclistsPropBySubgroups[i, ]$pplAdditionalCyclists
       
       # check if there are enough ppl from subgroup in a population; if more are selected -> use total number of subgroup members
-         
+      
       realCyclistsInSubgroup <- round(ifelse(round(cyclistsPropBySubgroups[i, ]$pplAdditionalCyclists, digits = 0) > cyclistsPropBySubgroups[i, ]$pplNonCyclist, cyclistsPropBySubgroups[i, ]$pplNonCyclist, cyclistsPropBySubgroups[i, ]$pplAdditionalCyclists), digits = 0)
       
       # pick up ppl who become cyclist but are not cyclist already
-
+      
       subgroupIDsOfPplBecomeCyclist <- sample(unique(baselineSubset[baselineSubset$cyclist != 1 & baselineSubset$agesex == as.character(cyclistsPropBySubgroups[i, ]$agesex),]$ID), realCyclistsInSubgroup, replace = F)
-
+      
       IDOfPplBecomingCyclist <- append(IDOfPplBecomingCyclist, subgroupIDsOfPplBecomeCyclist)
       
       # work out remaining diff (if value > 0 this means that sample should be filled with ppl from other subgroups)
-
+      
       remainingCyclistsCounter <- remainingCyclistsCounter + ifelse(round(cyclistsPropBySubgroups[i, ]$pplAdditionalCyclists, digits = 0) - length(subgroupIDsOfPplBecomeCyclist) > 0, round(cyclistsPropBySubgroups[i, ]$pplAdditionalCyclists, digits = 0) - length(subgroupIDsOfPplBecomeCyclist), 0)
       
     } 
@@ -191,7 +192,7 @@ directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baselin
 
 #' Potential Cyclists (Proportions Approach)
 #'
-#' Returns IDs of all ppl (including also these who were cyclist
+#' Identifies IDs of all ppl (including also these who were cyclist
 #' already) who became potential cyclist using proportions approach
 #'
 #' @param baselineSubset A subset of baseline travey survey data as a data frame
@@ -200,6 +201,7 @@ directProbRRPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baselin
 #' @param equity Boolean variable for equity (between men and women)
 #' @param pcycl_baseline Cycling probability broken down by age and gender groups
 #' @param region An integer variable to specify one of the nine regions of England 
+#' @return Return IDs of all individuals satisfying \code{DP}, \code{ebikes} and \code{equity} in a specified \code{region}
 #' @export
 
 directProbProportionsPPLIDs <- function(baselineSubset, DP, ebikes, equity, pcycl_baseline, region) {
