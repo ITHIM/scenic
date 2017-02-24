@@ -17,8 +17,11 @@ trip_speed(age, sex, bike_type)
 
 \item{pcycl_baseline}{Cycling probability broken down by age and gender groups}
 }
+\value{
+Trip Speed based on age, sex and bike_type
+}
 \description{
-Returns speed of a cycling trip, based on following parameters:
+Calculates speed of a cycling trip, based on following parameters:
 1. age: With two categories 16-59 and 60+ year olds
 2. gender: Male or Female
 3. bike_type: A boolean variable whether it's a pedal bike (0) or an ebike (1)

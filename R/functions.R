@@ -1,6 +1,6 @@
 #' Trip Speed
 #'
-#' Returns speed of a cycling trip, based on following parameters:
+#' Calculates speed of a cycling trip, based on following parameters:
 #' 1. age: With two categories 16-59 and 60+ year olds
 #' 2. gender: Male or Female
 #' 3. bike_type: A boolean variable whether it's a pedal bike (0) or an ebike (1)
@@ -11,6 +11,7 @@
 #' @param ebikes Boolean variable for ebikes
 #' @param equity Boolean variable for equity (between men and women)
 #' @param pcycl_baseline Cycling probability broken down by age and gender groups
+#' @return Trip Speed based on age, sex and bike_type
 #' @export
 
 trip_speed <- function(age, sex, bike_type)  {
