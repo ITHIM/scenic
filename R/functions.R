@@ -1,28 +1,41 @@
-tripspeed <-function(age,sex,biketype)  {
-  #ageIntervals <-c(16,30,45,60,70,80)
-  # cat(age, " : ", sex, "\n")
-  if (biketype == 0) {     
-    if (sex == 'Female'){
-      if (age == '16.59') 
+#' Trip Speed
+#'
+#' Returns speed of a cycling trip, based on following parameters:
+#' 1. age: With two categories 16-59 and 60+ year olds
+#' 2. gender: Male or Female
+#' 3. bike_type: A boolean variable whether it's a pedal bike (0) or an ebike (1)
+#' 
+#'
+#' @param baseline Baseline Travel Survey Dataframe
+#' @param DP Direct probability of potential cyclists
+#' @param ebikes Boolean variable for ebikes
+#' @param equity Boolean variable for equity (between men and women)
+#' @param pcycl_baseline Cycling probability broken down by age and gender groups
+#' @export
+
+trip_speed <- function(age, sex, bike_type)  {
+  if (bike_type == 0) {
+    if (sex == 'Female') {
+      if (age == '16.59')
         speed = 10.12
-      else 
+      else
         speed = 8.27
     }
     
-    else    #sex=male
+    else
+      #sex=male
     {
-      if (age == '16.59') 
+      if (age == '16.59')
         speed = 10.87
-      else          
-        speed = 9.08}
-  }     
+      else
+        speed = 9.08
+    }
+  }
   
-  if (biketype == 1) 
-    speed = 11.58      
+  if (bike_type == 1)
+    speed = 11.58
   
   tripspeed = speed
-  
-  
 }
 
 
