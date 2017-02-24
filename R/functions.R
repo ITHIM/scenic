@@ -92,18 +92,28 @@ odds_to_prob <- function (x){
 #' @return Probability
 #' @export
 
-
 prob_to_odds <- function (x){
   x / (1 - x) 
 }
 
 
-pcyc21 <-function(age,sex,dist,ebikes,equity,MS) {
+#' Calculates probability of a given trip being cycled
+#'
+#' 
+#' @param age Either 16.59 or 60plus
+#' @param sex Male or Female
+#' @param dist Distance of the trip
+#' @param ebikes Boolean variable if it's an ebike scenario or not
+#' @param pcycl_baseline Table (as a data frame) with age and gender specific probability of cycling a trip
+#' @return Probability of a cyle trip
+#' @export
+
+prob_cycling <- function(age, sex, dist, ebikes, pcycl_baseline) {
   
   #intervals for distance binning
-  distIntervals <-c(0.5,1.5,2.5,3.5,4.5,5.5,6.5,9.5,12.5,15.5,20.5,30.5,40.5,10000)
+  distIntervals <- c(0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 9.5, 12.5, 15.5, 20.5, 30.5, 40.5, 10000)
   #get interval to use as nrow
-  nrow <- findInterval(dist,distIntervals)+1  # starts @ 0, add 1
+  nrow <- findInterval(dist, distIntervals) + 1  # starts @ 0, add 1
   prob <- 0
   if (ebikes == 0) {
     ncol <- paste(sex,age,sep="_")
@@ -114,6 +124,5 @@ pcyc21 <-function(age,sex,dist,ebikes,equity,MS) {
     prob <- pcycl_baseline[nrow,ncol] 
   }
   
-  pcyc <- prob
-  pcyc
+  prob
 }
