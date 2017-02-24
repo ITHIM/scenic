@@ -1,6 +1,11 @@
 #' Flow_gram
 #'
+#' Creates a scenario based on three paramets: 
+#' 1. Direct Probability (Percentage of potential cyclists in the overall population). Its value is in percentages (between 0 and 1)
+#' 2. Ebikes: A boolean variable indicating whether ebikes are being used or not. This allows longer journeys to be converted into ebike journeys.
+#' 3. Equity: A boolean variable whether women have the same probablity of converting their trips into cycling trips.
 #' 
+#' At the end, this function returns a data frame (similar to the baseline data frame), with new cycling trips
 #' 
 #'
 #' @param baseline Baseline Travel Survey Dataframe
@@ -9,6 +14,7 @@
 #' @param equity Boolean variable for equity (between men and women)
 #' @param pcycl_baseline Cycling probability broken down by age and gender groups
 #' @export
+
 flow_gram <-function(baseline, DP,ebikes,equity, pcycl_baseline) {
 
   #resets all senarios parameters: trip cycled(now_cycle) | person=cyclist | prob cycling a trip (Pcyc)

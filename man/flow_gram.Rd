@@ -2,14 +2,14 @@
 % Please edit documentation in R/flow_gram.R
 \name{flow_gram}
 \alias{flow_gram}
-\title{Flowgram}
+\title{Flow_gram}
 \usage{
-flow_gram(baseline, MS, ebikes, equity, pcycl_baseline)
+flow_gram(baseline, DP, ebikes, equity, pcycl_baseline)
 }
 \arguments{
 \item{baseline}{Baseline Travel Survey Dataframe}
 
-\item{MS}{Direct probability of potential cyclists}
+\item{DP}{Direct probability of potential cyclists}
 
 \item{ebikes}{Boolean variable for ebikes}
 
@@ -18,6 +18,12 @@ flow_gram(baseline, MS, ebikes, equity, pcycl_baseline)
 \item{pcycl_baseline}{Cycling probability broken down by age and gender groups}
 }
 \description{
-Not sure what it does yet.
+Creates a scenario based on three paramets: 
+1. Direct Probability (Percentage of potential cyclists in the overall population). Its value is in percentages (between 0 and 1)
+2. Ebikes: A boolean variable indicating whether ebikes are being used or not. This allows longer journeys to be converted into ebike journeys.
+3. Equity: A boolean variable whether women have the same probablity of converting their trips into cycling trips.
+}
+\details{
+At the end, this function returns a data frame (similar to the baseline data frame), with new cycling trips
 }
 
