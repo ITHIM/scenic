@@ -15,7 +15,7 @@ information, documentation and examples.
 
 }
 \author{
-Ali Abbas \email{aa797@cam.ac.uk}
+Ali Abbas \email{m.ali.abbas@gmal.com}
 }
 \references{
 \url{http://www.cedar.iph.cam.ac.uk/research/modelling/ithim/}, \url{https://ithim.ghi.wisc.edu/}

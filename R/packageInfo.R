@@ -7,7 +7,7 @@
 #' 
 #' @name scenic-package
 #' @docType package
-#' @author Ali Abbas \email{aa797@@cam.ac.uk}
+#' @author Ali Abbas \email{m.ali.abbas@gmal.com}
 #' @references \url{http://www.cedar.iph.cam.ac.uk/research/modelling/ithim/}, \url{https://ithim.ghi.wisc.edu/}
 #' @aliases scenic
 #' @examples
