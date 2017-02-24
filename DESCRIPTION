@@ -9,7 +9,7 @@ Description: An implementation of scenario generation based on travel survey
     data. It takes into account variable names and type of scenarios users are
     interested in. See the ICT website for more information, documentation and
     examples.
-License: What license is it under?
+License: AGPL
 LazyData: TRUE
 Depends:
 RoxygenNote: 5.0.1
