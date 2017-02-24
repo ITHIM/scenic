@@ -1,14 +1,16 @@
 #' Flowgram
 #'
 #' Not sure what it does yet.
+#' 
+#' 
 #'
-#' @param baseline ???
-#' @param MS ???
-#' @param ebikes ???
-#' @param equity ???
-#' @param pcycl_baseline ???
+#' @param baseline Baseline Travel Survey Dataframe
+#' @param MS Direct probability of potential cyclists
+#' @param ebikes Boolean variable for ebikes
+#' @param equity Boolean variable for equity (between men and women)
+#' @param pcycl_baseline Cycling probability broken down by age and gender groups
 #' @export
-flowgram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
+flow_gram <-function(baseline, MS,ebikes,equity, pcycl_baseline) {
 
   #resets all senarios parameters: trip cycled(now_cycle) | person=cyclist | prob cycling a trip (Pcyc)
   baseline$now_cycle <- 0
