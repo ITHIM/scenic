@@ -15,6 +15,6 @@ bike_choice(dist, tripsebike)
 Returns a boolean: 1 for ebike and 0 for pedal bike
 }
 \description{
-Probabilitically identifies if a trip is converted to a pedal bike trip or an ebike trip
+Probabilistically identifies if a trip is converted to a pedal bike trip or an ebike trip
 }
 

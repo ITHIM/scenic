@@ -43,7 +43,7 @@ trip_speed <- function(age, sex, bike_type)  {
 
 #' Bike Choice
 #'
-#' Probabilitically identifies if a trip is converted to a pedal bike trip or an ebike trip
+#' Probabilistically identifies if a trip is converted to a pedal bike trip or an ebike trip
 #' 
 #'
 #' @param dist Trip Distance
