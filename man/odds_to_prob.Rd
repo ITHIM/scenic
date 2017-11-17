@@ -15,4 +15,3 @@ Odds ratio
 \description{
 Converts odds ratio to probability
 }
-

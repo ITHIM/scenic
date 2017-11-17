@@ -2,8 +2,8 @@
 % Please edit documentation in R/packageInfo.R
 \docType{package}
 \name{scenic-package}
-\alias{scenic}
 \alias{scenic-package}
+\alias{scenic}
 \title{Scenario Generation Tool (scenic)}
 \description{
 Description: An implementation of scenario generation based on
@@ -14,10 +14,9 @@ information, documentation and examples.
 \examples{
 
 }
-\author{
-Ali Abbas \email{m.ali.abbas@gmal.com}
-}
 \references{
 \url{http://www.cedar.iph.cam.ac.uk/research/modelling/ithim/}, \url{https://ithim.ghi.wisc.edu/}
 }
-
+\author{
+Ali Abbas \email{m.ali.abbas@gmal.com}
+}

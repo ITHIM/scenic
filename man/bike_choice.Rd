@@ -17,4 +17,3 @@ Returns a boolean: 1 for ebike and 0 for pedal bike
 \description{
 Probabilistically identifies if a trip is converted to a pedal bike trip or an ebike trip
 }
-

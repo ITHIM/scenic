@@ -26,4 +26,3 @@ Creates a scenario based on three paramets:\cr
 \details{
 At the end, this function returns a data frame (similar to the baseline data frame), with new cycling trips
 }
-

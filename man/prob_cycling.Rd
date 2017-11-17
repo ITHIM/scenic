@@ -23,4 +23,3 @@ Probability of a cyle trip
 \description{
 Calculates probability of a given trip being cycled
 }
-

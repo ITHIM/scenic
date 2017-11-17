@@ -25,4 +25,3 @@ Return IDs of all individuals satisfying \code{DP}, \code{ebikes} and \code{equi
 \description{
 Identifies IDs of all ppl (including also these who were cyclist already) who became potential cyclist using relative risk approach
 }
-

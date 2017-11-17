@@ -22,4 +22,3 @@ Calculates speed of a cycling trip, based on following parameters:\cr
 2. gender: Male or Female\cr
 3. bike_type: A boolean variable whether it's a pedal bike (0) or an ebike (1)\cr
 }
-

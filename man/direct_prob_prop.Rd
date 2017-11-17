@@ -26,4 +26,3 @@ Return IDs of all individuals satisfying \code{DP}, \code{ebikes} and \code{equi
 Identifies IDs of all ppl (including also these who were cyclist
 already) who became potential cyclist using proportions approach
 }
-
