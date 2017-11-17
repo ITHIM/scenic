@@ -12,4 +12,4 @@ Description: An implementation of scenario generation based on travel survey
 License: AGPL
 LazyData: TRUE
 Depends:
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
