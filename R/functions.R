@@ -6,7 +6,7 @@
 #' 3. bike_type: A boolean variable whether it's a pedal bike (0) or an ebike (1)\cr
 #' 
 #'
-#' @param age Individual age: 16.59 or 60plus
+#' @param age Individual age: 16.59 or 60 plus
 #' @param sex Male or Female
 #' @param bike_type 0 for pedal and 1 for ebike
 #' @return Trip Speed based on age, sex and bike_type
